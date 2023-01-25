@@ -14,6 +14,12 @@ public class XmlAppContext {
     final ApplicationContext ac = new GenericXmlApplicationContext("appConfig.xml");
     final MemberService memberService = ac.getBean("memberService", MemberService.class);
     assertThat(memberService).isInstanceOf(MemberService.class);
+    final String[] beanDefinitionNames = ac.getBeanDefinitionNames();
+    for (String beanDefinitionName : beanDefinitionNames) {
+      
+      final Object bean = ac.getBean(beanDefinitionName);
+      System.out.println("bean = " + bean);
+    }
   }
 
 }
