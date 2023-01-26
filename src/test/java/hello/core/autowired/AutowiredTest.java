@@ -1,11 +1,24 @@
 package hello.core.autowired;
 
 import hello.core.member.Member;
-import jakarta.annotation.Nullable;
 import java.util.Optional;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.lang.Nullable;
 
 public class AutowiredTest {
+
+  @Test
+  public void AutowiredOption() {
+    //given
+    AnnotationConfigApplicationContext ac = new AnnotationConfigApplicationContext(
+        TestBean.class);
+
+    //when
+
+    //then
+  }
   static class TestBean {
     @Autowired(required = false)
     public void setNoBean(Member noBean1) {
